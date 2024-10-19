@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="empty_text">-?-</string>
+    <string name="degree">\u00A0\u00BAC</string>
+    <string name="percent">\u00A0%</string>
+</resources>
