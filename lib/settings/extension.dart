@@ -6,7 +6,7 @@ extension DataConversion on int? {
     // Из полученных данных выводим температуру
     final temperature = (this! * 200.00 / 1048576.00) - 50.00;
     if (temperature > 0) {
-      return '+${temperature.toStringAsFixed(1)}';
+      return temperature.toStringAsFixed(1);
     }
     return temperature.toStringAsFixed(1);
   }
