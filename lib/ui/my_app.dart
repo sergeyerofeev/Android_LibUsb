@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './my_home_page.dart';
+import './receive_data.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,11 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const ReceiveData(),
     );
   }
 }
