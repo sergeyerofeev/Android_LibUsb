@@ -19,8 +19,9 @@ dependencies:
   hsv_color_pickers: ^0.3.0
   flutter_riverpod: ^2.6.1
 
-
   ffi: any
+  shared_preferences: ^2.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

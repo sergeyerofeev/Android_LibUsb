@@ -11,6 +11,7 @@ import 'package:libusb_android/libusb_android.dart';
 import 'package:libusb_android_helper/libusb_android_helper.dart';
 
 import '../settings/extension.dart';
+import '../settings/key_store.dart';
 
 class ReceiveData extends ConsumerStatefulWidget {
   const ReceiveData({super.key});
@@ -135,16 +136,16 @@ class _ReceiveDataState extends ConsumerState<ReceiveData> {
             final tempValue = rawt.toTemperature();
             final humValue = rawh.toHumidity();
             // Устанавливаем данные в провайдеры
-            ref.read(temValueProvider.notifier).state = tempValue;
+            ref.read(tempValueProvider.notifier).state = tempValue;
             ref.read(humValueProvider.notifier).state = humValue;
             // Устанавливаем данные для передачи в HomeScreenWidget
-            await HomeWidget.saveWidgetData<String>("temperature", tempValue);
-            await HomeWidget.saveWidgetData<String>("humidity", humValue);
+            await HomeWidget.saveWidgetData<String>(tempValueKey, tempValue);
+            await HomeWidget.saveWidgetData<String>(humValueKey, humValue);
             await HomeWidget.updateWidget(androidName: "HomeScreenWidget", qualifiedAndroidName: "com.example.android_libusb.HomeScreenWidget");
           }
         } else {
-          await HomeWidget.saveWidgetData<String>("temperature", "-?-");
-          await HomeWidget.saveWidgetData<String>("humidity", "-?-");
+          await HomeWidget.saveWidgetData<String>(tempValueKey, "-?-");
+          await HomeWidget.saveWidgetData<String>(humValueKey, "-?-");
           timer.cancel();
           if (libUsb.libusb_release_interface(_devHandle.value, _interfaceNumber) == 0) {
             // Устройство присоединено и работает
