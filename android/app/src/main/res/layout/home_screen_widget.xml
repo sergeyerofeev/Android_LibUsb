@@ -1,55 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout_id"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/border_background"
     android:baselineAligned="false"
     android:gravity="center_horizontal"
-    android:minWidth="70dp"
+    android:minWidth="140dp"
+    android:minHeight="40dp"
     android:orientation="vertical"
     android:padding="5dp">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/textview_temp"
+        style="@style/CustomTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:text="@string/empty_text"
+        android:textColor="#FFFF0000" />
 
-        <TextView
-            android:id="@+id/textview_temp"
-            style="@style/CustomTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/empty_text"
-            android:textColor="#FF0000" />
 
-        <TextView
-            style="@style/CustomTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/degree"
-            android:textColor="#FF0000" />
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/textview_hum"
+        style="@style/CustomTextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:text="@string/empty_text"
+        android:textColor="#FF0000FF" />
 
-        <TextView
-            android:id="@+id/textview_hum"
-            style="@style/CustomTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/empty_text"
-            android:textColor="#0000FF" />
-
-        <TextView
-            style="@style/CustomTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/percent"
-            android:textColor="#0000FF" />
-    </LinearLayout>
 </LinearLayout>

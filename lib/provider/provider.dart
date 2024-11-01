@@ -8,7 +8,8 @@ final sharedPreferencesProvider = Provider<SharedPreferences>((_) => throw Unimp
 final tempValueProvider = StateProvider.autoDispose<String>((_) => "-?-");
 final humValueProvider = StateProvider.autoDispose<String>((_) => "-?-");
 
-// Провайдеры цветов рамки, значения температуры, значения влажности
-final borderColorProvider = StateProvider.autoDispose<Color>((_) => throw UnimplementedError());
+// Провайдер цвета шрифта значения температуры
 final tempColorProvider = StateProvider.autoDispose<Color>((_) => throw UnimplementedError());
+
+// Провайдеры цвета шрифта значения влажности
 final humColorProvider = StateProvider.autoDispose<Color>((_) => throw UnimplementedError());

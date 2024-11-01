@@ -146,6 +146,7 @@ class _ReceiveDataState extends ConsumerState<ReceiveData> {
         } else {
           await HomeWidget.saveWidgetData<String>(tempValueKey, "-?-");
           await HomeWidget.saveWidgetData<String>(humValueKey, "-?-");
+          await HomeWidget.updateWidget(androidName: "HomeScreenWidget", qualifiedAndroidName: "com.example.android_libusb.HomeScreenWidget");
           timer.cancel();
           if (libUsb.libusb_release_interface(_devHandle.value, _interfaceNumber) == 0) {
             // Устройство присоединено и работает

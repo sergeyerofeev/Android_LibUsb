@@ -10,7 +10,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final sharedPreferences = await SharedPreferences.getInstance();
   // Извлекаем из хранилища установленные значения цветов
-  final borderColor = sharedPreferences.getString(borderColorKey) ?? "FFFF0000";
   final tempColor = sharedPreferences.getString(tempColorKey) ?? "FFFF0000";
   final humColor = sharedPreferences.getString(humColorKey) ?? "FF0000FF";
 
@@ -18,7 +17,6 @@ Future<void> main() async {
     overrides: [
       // Устанавливаем новые объекты
       sharedPreferencesProvider.overrideWithValue(sharedPreferences),
-      borderColorProvider.overrideWith((_) => Color(int.parse(borderColor, radix: 16))),
       tempColorProvider.overrideWith((_) => Color(int.parse(tempColor, radix: 16))),
       humColorProvider.overrideWith((_) => Color(int.parse(humColor, radix: 16))),
     ],

@@ -1,16 +1,37 @@
-# android_libusb
+## android_libusb
 
-An Android application on Flutter using the libusb package.
+#### Приложение для Android
 
-## Getting Started
+<p align="center">
+    <img src="git_image/image.png" style="height: 700; width: 323; object-fit: contain">
+</p>  
 
-This project is a starting point for a Flutter application.
+#### Описание
+Данное приложение использует для взаимодействия с микроконтроллером библиотеку **libusb**.  
+Если в приложении прописано разрешение для VID и PID подключаемого устройства, то запуск приложения просходит сразу при присоединении кабеля USB.
 
-A few resources to get you started if this is your first Flutter project:
+Код для микроконтроллера STM32F103 расположен по адресу:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://github.com/sergeyerofeev/Projects_on_STM32F103/tree/main/i2c_aht21b
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+В самом приложении имеется возможность только изменять цвет шрифта значений температуры и влажноси, затем приложение переводится в фоновый режим и вывод данных можно наблюдать на рабочем экране.
+
+Стандартными способами подключаем виджет приложения к рабочему экрану.  
+
+<p align="center">
+    <img src="git_image/image1.png" style="height: 700; width: 323; object-fit: contain">
+</p>  
+
+---
+Для создания виджета рабочего экрана был использован Flutter пакет **home_widget**:  
+
+https://pub.dev/packages/home_widget
+
+Так как разметка виджета выполнена на xml, который статичен, возникают следующие ограничения:  
+1.	Нельзя динамически изменить размер и цвет рамки 
+2.	Не корректно работает изменение размера шрифта, происходит только его увеличение.
+3.	Нормально можно изменить только цвет шрифта  
+
+---
+
+
